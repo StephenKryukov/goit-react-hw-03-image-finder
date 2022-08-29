@@ -40,7 +40,7 @@ export default class App extends Component {
         fetchImages(searchRequest, galleryPage).then(data => {
           if (!data.data.hits.length) {
             return toast.error(
-              'There is no images found with that search request'
+              'There are no images found by your search request'
             );
           }
           const mappedImages = data.data.hits.map(
@@ -97,13 +97,13 @@ export default class App extends Component {
       <>
         <Searchbar onSearch={this.handleSearchSubmit} />
         {error && toast.error(`Whoops, something went wrong: ${error.message}`)}
-        {isLoading && <Loader color={'#3f51b5'} size={32} />}
         {images.length > 0 && (
           <>
             <ImageGallery images={images} handlePreview={this.showModalImage} />
             <Button loadMore={this.loadMore} />
           </>
         )}
+        {isLoading && <Loader color={'#3f51b5'} size={200} />}
         {showModal && (
           <Modal
             lgImage={showModal.largeImageURL}
@@ -111,7 +111,7 @@ export default class App extends Component {
             closeModal={this.closeModalImage}
           />
         )}
-        <ToastContainer autoClose={3000} />
+        <ToastContainer autoClose={2500} />
       </>
     );
   }

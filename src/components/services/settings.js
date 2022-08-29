@@ -1,6 +1,6 @@
 const settings = {
   BASE_URL: 'https://pixabay.com/api/?',
-  API_KEY: 'key=25751789-1ee4e52f765dcddc73e494971',
+  API_KEY: 'key=28702547-e6a50c7f62eac093665197ede',
   TYPE: '&image_type=photo',
   PER_PAGE: '&per_page=12',
 };
